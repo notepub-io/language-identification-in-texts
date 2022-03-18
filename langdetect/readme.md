@@ -1,4 +1,4 @@
-# Follow the instructions to use fasttext python code for language identification.
+# Follow the instructions to use langdetect python code for language identification.
 ## To create a virtual environment, run the below command in your terminal
 source setup.sh
 

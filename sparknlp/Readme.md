@@ -1,4 +1,4 @@
-# Follow the instructions to use gcld3 python code for language identification.
+# Follow the instructions to use sparknlp python code for language identification.
 ## To create a virtual environment, run the below command in your terminal
 source setup.sh
 
@@ -9,4 +9,3 @@ source setup.sh
 python main.py 
 
 ### To change input text, edit in main.py file. 
-
