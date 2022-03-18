@@ -1,4 +1,3 @@
-from tkinter import E
 import sparknlp
 from sparknlp.pretrained import PretrainedPipeline
 from sparknlp.base import *
