@@ -1,4 +1,6 @@
 from polyglot.detect import Detector
+from polyglot.utils import pretty_list
+
 from pycountry import languages
 
 class LID():
@@ -20,6 +22,8 @@ class LID():
     def detect(self,input) -> bool:
         pass
 
+    def supported_langs(self):
+        pass 
 
 class PolyGlotBasedLID(LID):
 
@@ -35,10 +39,16 @@ class PolyGlotBasedLID(LID):
             if str_lst:
                 str_lst = [st for st in str_lst if st != ""]
                 self.lang = str_lst[3]
-                self.score = str_lst[5]
+                self.score = float(str_lst[5])/100
                 self.lang_name = str_lst[1]
                 return(True)
-        except:
-            return(False)
+        except Exception as ex:
+            template = "An exception of type {0} occurred. Arguments:\n{1!r}"
+            message = template.format(type(ex).__name__, ex.args)
+            print(message)
+            self.status = False
 
         return(False)
+    
+    def supported_langs(self):
+        print(pretty_list(Detector.supported_languages()))
